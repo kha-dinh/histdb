@@ -1,0 +1,26 @@
+[Favorite Profiles]
+Favorites=Breath2.profile
+
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[MainWindow]
+DP-0 DP-4 Height 2560x1440=1411
+DP-0 DP-4 Height 3840x2160=2107
+DP-0 DP-4 Width 2560x1440=1276
+DP-0 DP-4 Width 3840x2160=1920
+DP-0 DP-4 XPosition 2560x1440=4
+DP-0 DP-4 XPosition 3840x2160=5760
+DP-0 DP-4 YPosition 2560x1440=29
+DP-0 DP-4 YPosition 3840x2160=53
+DP-4 DP-0 Height 2560x1440=461
+DP-4 DP-0 Width 2560x1440=526
+DP-4 DP-0 Window-Maximized 2560x1440=true
+DP-4 DP-0 XPosition 2560x1440=5675
+DP-4 DP-0 YPosition 2560x1440=742
+State=AAAA/wAAAAD9AAAAAAAAAskAAAKQAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+CloseAllEmptyTabs=true
+CloseAllTabs=true

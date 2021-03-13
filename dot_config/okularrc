@@ -1,0 +1,19 @@
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+DP-4 DP-0 Height 2560x1440=1419
+DP-4 DP-0 Width 2560x1440=713
+DP-4 DP-0 XPosition 2560x1440=1835
+DP-4 DP-0 YPosition 2560x1440=11
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAAskAAAU/AAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Zotero/storage/8NHNJ8IZ/14-F2FS.pdf
+File2[$e]=$HOME/Zotero/storage/ENRNF5H5/Zhang et al. - 2011 - A Parallel K-Means Clustering Algorithm with MPI.pdf
+File3[$e]=$HOME/Zotero/storage/XGHYEVAN/Xu et al. - 2015 - Controlled-Channel Attacks Deterministic Side Cha.pdf
+Name1[$e]=14-F2FS.pdf
+Name2[$e]=Zhang et al. - 2011 - A Parallel K-Means Clustering Algorithm with MPI.pdf
+Name3[$e]=Xu et al. - 2015 - Controlled-Channel Attacks Deterministic Side Cha.pdf

@@ -1,0 +1,18 @@
+[Added Associations]
+application/pdf=okularApplication_pdf.desktop;
+inode/directory=org.kde.dolphin.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;
+
+[Default Applications]
+application/pdf=okularApplication_pdf.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/html=vivaldi-stable.desktop
+x-scheme-handler/ferdi=ferdi.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;
+
+[Removed Associations]
+application/pdf=firefox.desktop;vivaldi-stable.desktop;libreoffice-draw.desktop;

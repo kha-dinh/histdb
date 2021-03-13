@@ -1,0 +1,16 @@
+[HTML Settings]
+AutomaticDetectionLanguage=1
+
+[MainWindow]
+DP-4 DP-0 Height 2560x1440=700
+DP-4 DP-0 Width 2560x1440=1133
+DP-4 DP-0 XPosition 2560x1440=965
+DP-4 DP-0 YPosition 2560x1440=505
+State=AAAA/wAAAAD9AAAAAAAABG0AAAJZAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[MainWindowState]
+Splitter=311,821
+
+[Search]
+ScopeSelection=0

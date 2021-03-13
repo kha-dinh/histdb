@@ -1,0 +1,11 @@
+[Windeco]
+DrawBorderOnMaximizedWindows=true
+DrawSizeGrip=false
+
+[Windeco Exception 0]
+BorderSize=8
+Enabled=true
+ExceptionPattern=.*
+ExceptionType=0
+HideTitleBar=true
+Mask=0
