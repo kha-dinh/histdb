@@ -20,6 +20,7 @@ LongitudeAuto=127.0099
 NightTemperature=3700
 
 [Plugins]
+desktopchangeosdEnabled=false
 krohnkiteEnabled=true
 minimizeallEnabled=true
 synchronizeskipswitcherEnabled=false
@@ -29,7 +30,7 @@ videowallEnabled=false
 directionalKeyDwm=false
 directionalKeyFocus=true
 ignoreClass=
-ignoreTitle=Yakuake
+ignoreTitle=Yakuake,Steam*
 limitTileWidthRatio=1
 maximizeSoleTile=true
 screenGapBottom=10
