@@ -393,6 +393,8 @@ colors:
 # default paste binding:
 #
 # `- { key: V, mods: Control|Shift, action: Paste }`
+key_bindings:
+- { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
 #
 # Each key binding will specify a:
 #
