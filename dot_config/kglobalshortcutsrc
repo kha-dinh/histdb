@@ -29,7 +29,6 @@ _k_friendly_name=Custom Shortcuts Service
 {260ca59b-fbac-48bb-97a5-5a88d6779922}=Ctrl+H,none,Left
 {4df31353-fee0-41c8-be29-bb51dfda8ed1}=Meta+:,none,Rofi window
 {99c95a02-ace9-4b6f-80b4-f7865fba040d}=Ctrl+L,none,Right
-{b39b4eb4-9225-4d48-90ba-53a98fc32385}=Meta+E,none,Emacs
 {b51796ed-ed01-4a9b-939a-9ac2a557c6bf}=Ctrl+J,none,Down
 {bdd59288-6636-4c83-8891-577d778e6fc6}=Meta+;,none,Rofi run
 {bf1267e4-07aa-4a13-84d1-fcf0ab5a10cd}=Ctrl+K,none,Up
