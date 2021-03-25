@@ -2,3 +2,47 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "dot_prezto/modules/autosuggestions/external"]
+	path = modules/autosuggestions/external
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "dot_prezto/modules/history-substring-search/external"]
+	path = modules/history-substring-search/external
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "dot_prezto/modules/syntax-highlighting/external"]
+	path = modules/syntax-highlighting/external
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "dot_prezto/modules/completion/external"]
+	path = modules/completion/external
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "dot_prezto/modules/prompt/external/powerline"]
+	path = modules/prompt/external/powerline
+	url = https://github.com/davidjrice/prezto_powerline.git
+[submodule "dot_prezto/modules/prompt/external/agnoster"]
+	path = modules/prompt/external/agnoster
+	url = https://github.com/agnoster/agnoster-zsh-theme.git
+[submodule "dot_prezto/modules/prompt/functions/pure"]
+	path = modules/prompt/external/pure
+	url = https://github.com/sindresorhus/pure.git
+[submodule "dot_prezto/modules/fasd/external"]
+	path = modules/fasd/external
+	url = https://github.com/clvv/fasd.git
+[submodule "dot_prezto/modules/prompt/external/async"]
+	path = modules/prompt/external/async
+	url = https://github.com/mafredri/zsh-async.git
+[submodule "dot_prezto/modules/prompt/external/powerlevel9k"]
+	path = modules/prompt/external/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
+	shallow = true
+[submodule "dot_prezto/modules/prompt/external/powerlevel10k"]
+	path = modules/prompt/external/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	shallow = true
+[submodule "dot_prezto/modules/zsh-z"]
+	path = modules/zsh-z
+	url = https://github.com/agkozak/zsh-z.git
+[submodule "dot_prezto/contrib"]
+	path = dot_prezto/contrib
+	url = https://github.com/belak/prezto-contrib
+[submodule "dot_prezto/modules/zsh-histdb"]
+	path = dot_prezto/modules/zsh-histdb
+	url = https://github.com/larkery/zsh-histdb

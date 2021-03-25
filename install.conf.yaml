@@ -2,19 +2,36 @@
     link:
       relink: true
 
-- clean: ['~`']
+- clean: ["~`"]
 
 - clean:
     ~/.config:
       recursive: true
-    
-
-- link: 
+    ~/.doom.d:
+      recursive: true
+- link:
     ~/.config:
       glob: true
       create: true
       force: true
       path: dot_config/*
+    ~/.doom.d:
+      glob: true
+      create: true
+      force: true
+      path: dot_doom_d/*
+    ~/.histdb:
+      glob: true
+      create: true
+      force: true
+      path: dot_histdb/*
+    ~/.zprezto: dot_prezto
+    ~/.zlogin: dot_prezto/runcoms/zlogin
+    ~/.zlogout: dot_prezto/runcoms/zlogout
+    ~/.zpreztorc: dot_prezto/runcoms/zpreztorc
+    ~/.zprofile: dot_prezto/runcoms/zprofile
+    ~/.zshenv: dot_prezto/runcoms/zshenv
+    ~/.zshrc: dot_prezto/runcoms/zshrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
