@@ -1,0 +1,30 @@
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+DP-4 DP-0 Height 3840x2160=1401
+DP-4 DP-0 Width 3840x2160=2548
+DP-4 DP-0 Window-Maximized 3840x2160=true
+DP-4 DP-0 XPosition 3840x2160=16
+DP-4 DP-0 YPosition 3840x2160=584
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAA28AAAGXAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/8094_Pepega.png
+File2[$e]=$HOME/Downloads/Dinh-Cong-Minh-CV.pdf
+File3[$e]=$HOME/Zotero/storage/XJ7ARW34/Oh et al. - TrustOre Side-Channel Resistant Storage for SGX u.pdf
+File4[$e]=$HOME/hai-hw.pdf
+File5[$e]=$HOME/Zotero/storage/JWSW9U8A/HMC-30G-VSR_HMCC_Specification.pdf
+File6[$e]=$HOME/Zotero/storage/TC5GHJWI/Azarkhish - A Full-System Simulation Environment for the Smart.pdf
+File7[$e]=$HOME/Zotero/storage/4HJZFMK8/Azarkhish - Design and Exploration of a Processing-in-Memory A.pdf
+File8[$e]=$HOME/Zotero/storage/Z48BQUWE/Yang et al_2019_ARM Pointer Authentication based Forward-Edge and Backward-Edge Control Flow.pdf
+Name1[$e]=8094_Pepega.png
+Name2[$e]=Dinh-Cong-Minh-CV.pdf
+Name3[$e]=Oh et al. - TrustOre Side-Channel Resistant Storage for SGX u.pdf
+Name4[$e]=hai-hw.pdf
+Name5[$e]=HMC-30G-VSR_HMCC_Specification.pdf
+Name6[$e]=Azarkhish - A Full-System Simulation Environment for the Smart.pdf
+Name7[$e]=Azarkhish - Design and Exploration of a Processing-in-Memory A.pdf
+Name8[$e]=Yang et al_2019_ARM Pointer Authentication based Forward-Edge and Backward-Edge Control Flow.pdf

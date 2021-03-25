@@ -1,9 +1,8 @@
 [Windeco]
 DrawBorderOnMaximizedWindows=true
-DrawSizeGrip=false
 
 [Windeco Exception 0]
-BorderSize=8
+BorderSize=1
 Enabled=true
 ExceptionPattern=.*
 ExceptionType=0

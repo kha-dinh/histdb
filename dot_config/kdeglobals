@@ -107,7 +107,7 @@ shadeSortColumn=true
 toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 
 [Icons]
-Theme=breath2
+Theme=breath2-dark
 
 [KDE]
 LookAndFeelPackage=org.kde.breath2.desktop
@@ -136,6 +136,9 @@ View Style=DetailTree
 [KScreen]
 ScaleFactor=1
 ScreenScaleFactors=eDP-1=1;DP-1=1;DP-2=1;DP-3=1;
+
+[KShortcutsDialog Settings]
+Dialog Size=650,480
 
 [WM]
 activeBackground=41,47,52

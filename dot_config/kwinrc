@@ -10,21 +10,31 @@ OpenGLIsUnsafe=false
 Id_1=44d94117-5693-49c1-94b9-7120209b334e
 Id_2=53aa9c48-5dde-4f0f-b5ff-c662a7ab32d8
 Id_3=322c2e77-d18a-4eb9-8889-8b6003fd26b2
-Number=3
+Id_4=162052c7-c5ee-4114-9388-1fb4161aed42
+Number=4
 Rows=2
+
+[Effect-Blur]
+NoiseStrength=11
 
 [NightColor]
 Active=true
 LatitudeAuto=37.2859
 LongitudeAuto=127.0099
-NightTemperature=3700
+NightTemperature=2500
 
 [Plugins]
 desktopchangeosdEnabled=false
+forceblurEnabled=true
 krohnkiteEnabled=true
 minimizeallEnabled=true
 synchronizeskipswitcherEnabled=false
 videowallEnabled=false
+
+[Script-forceblur]
+blurExceptMatching=true
+blurMatching=false
+patterns=
 
 [Script-krohnkite]
 directionalKeyDwm=false

@@ -102,16 +102,17 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
-    # Default:
+    Default:
+      - Hack
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    # family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -243,14 +244,14 @@ colors:
   #   command:
   #     program: notify-send
   #     args: ["Hello, World!"]
-  #
+  #/b
   #command: None
 
 # Background opacity
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.90
 
 #selection:
   # This string contains all characters that are used as separators for
