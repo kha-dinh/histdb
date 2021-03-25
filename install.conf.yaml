@@ -20,11 +20,9 @@
       create: true
       force: true
       path: dot_doom_d/*
-    ~/.histdb:
-      glob: true
+    ~/.histdb/zsh-history.db:
       create: true
-      force: true
-      path: dot_histdb/*
+      path: dot_histdb/zsh-history.db
     ~/.zprezto: dot_prezto
     ~/.zlogin: dot_prezto/runcoms/zlogin
     ~/.zlogout: dot_prezto/runcoms/zlogout
