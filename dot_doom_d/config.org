@@ -120,6 +120,10 @@
 (package! org-tree-slide)
 ;; (package! org-download)
 #+end_src
+
+#+RESULTS:
+| org-tree-slide | :modules | (nil) |
+
 ** Configs
 #+BEGIN_SRC emacs-lisp :tangle yes
 ;; If you use `org' and don't want your org files in the default location below,
