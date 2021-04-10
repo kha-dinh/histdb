@@ -2,46 +2,28 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-clientMachine1=localhost
-command1=emacs
-count=1
+count=0
 
 [Session: saved at previous logout]
 clientId1=10140dbcd8e000161537623500001883710007
 clientId2=10140dbcd8e000161537623500001883710008
 clientId3=10140dbcd8e000161537623500001883710009
-clientId4=10140dbcd8e000161538040700000008170019
-clientId5=10140dbcd8e000161545622300000007970009
-clientId6=10140dbcd8e000161545629600000007970010
-clientId7=10140dbcd8e000161546450400000007970029
-count=7
-discardCommand3[$e]=rm,$HOME/.config/session/yakuake_10140dbcd8e000161537623500001883710009_1615470462_895279
-discardCommand4[$e]=rm,$HOME/.config/session/systemsettings_10140dbcd8e000161538040700000008170019_1615470462_895297
+clientId4=1014811110995000161681011600000043590007
+count=4
+discardCommand3[$e]=rm,$HOME/.config/session/yakuake_10140dbcd8e000161537623500001883710009_1616784700_658411
 program1=/usr/bin/msm_kde_notifier
 program2=/usr/bin/pamac-tray-plasma
 program3=/usr/bin/yakuake
-program4=/usr/bin/systemsettings5
-program5=pulseaudio
-program6=firefox
-program7=zotero
-restartCommand1=/usr/bin/msm_kde_notifier,-session,10140dbcd8e000161537623500001883710007_1615470462_895263
-restartCommand2=/usr/bin/pamac-tray-plasma,-session,10140dbcd8e000161537623500001883710008_1615470462_895284
-restartCommand3=/usr/bin/yakuake,-session,10140dbcd8e000161537623500001883710009_1615470462_895279
-restartCommand4=/usr/bin/systemsettings5,-session,10140dbcd8e000161538040700000008170019_1615470462_895297
-restartCommand5=
-restartCommand6=/usr/lib/firefox/firefox,--sm-client-id,10140dbcd8e000161545629600000007970010
-restartCommand7=/usr/lib/zotero/zotero,--sm-client-id,10140dbcd8e000161546450400000007970029
+program4=pulseaudio
+restartCommand1=/usr/bin/msm_kde_notifier,-session,10140dbcd8e000161537623500001883710007_1616784700_658409
+restartCommand2=/usr/bin/pamac-tray-plasma,-session,10140dbcd8e000161537623500001883710008_1616784700_658388
+restartCommand3=/usr/bin/yakuake,-session,10140dbcd8e000161537623500001883710009_1616784700_658411
+restartCommand4=
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
 restartStyleHint4=0
-restartStyleHint5=0
-restartStyleHint6=0
-restartStyleHint7=0
 userId1=khadd
 userId2=khadd
 userId3=khadd
 userId4=khadd
-userId5=khadd
-userId6=khadd
-userId7=khadd

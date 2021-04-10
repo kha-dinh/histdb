@@ -1,0 +1,116 @@
+#+title: Guidelines for Human-AI Tnteraction
+#+date:
+
+* Paper: Guidelines for Human-AI interaction
++ Authors: Saleema Amershi et. al., Microsoft Research
++ Published in: CHI 2018
+** Overview
++ 18 design guidelines for human-AI interaction is composed from over 150 design recommendations from over 20 years of learning in AI design
++ The guidelines are validated through multiple rounds user study
+  - The results verify he relavant of them and reveals gaps in our knowledge about HAI
+
+* Motivation
++ /AI-infused systems/ ( System that have AI features ) have uncertaintes that violates traditional UI design principles
++ Over 20 years, numerous guidelines and recommendations has been proposed for HAI in the industries and academia
+  - However, there are still mistakes made in various AI interfaces
+  - Which shows that designers and developers still struggle with creating effective AI-infuse systems
++ A shared guidelines is useful for people to design and evaluate AI-infused systems
+* Phase 1: Consolidation of guidelines
++ Guidines are gathered from three sources:
+  + Review of industry AI products
+  + Recent public articles about AI desgin
+  + Relavent papers about AI design
++ 168 design guidelines are obtained, which are consolidated into 20
++ The guidelines are organized into four categories based on when during the user's interaction they are applied:
+  + Initially
+  + During interraction
+  + When wrong
+  + Over time
+* Phase 2: Modified Heuristic Evaluation
++ 11 team members participated
++ The evaluators examine 13 AI-infused products and try to identify both applications and violations of the guidelines
++ The findings are reviewd, and the number is further reduced to 18
+* Phase 3: User study
++ A user study with 49 HCI particioners is conducted
+** Procedure
++ A heuristic evaluation: each participant is asign to an AI product and asked to find applications and violations of each guideline
+* Phase 3: User study
+** Products
++ Products are selected using a maximum-variance sampling strategy:
+  + Top ranking apps, software and websites in the U.S. is searched
+  + Products are grouped by their use case, resulting in 10 categories, 2 product each
+  + Select prominent AI-drivent feature to evaluate per product
+[[/home/khadd/.dotfiles/dot_doom_d/org/roam/20210328222526-hai_slides.org_20210329_094957_S5Ua6k.png]]
+* Phase 3: User study
+** Participants
++ People at large software company with at least 1 year experience in HCI
++ 49 participated
++ 2-3 participants is assigned to each product
+** Adjustment and Misinterpretaion
++ The responses are reviewed in the cases of:
+  + Duplication (55 instances)
+  + The pacipant use "Does not apply" to indicate that they cannot find an example of the guideline (73 instances)
+  + The pacipant use "Does not apply" to indicate a violation (20 instances)
+  +ke clear  The participant misinterpretes one guideline to another
+* Phase 3: User Study (Results)
+** *Clarity and Clarifications*
+  + Some guidelines are rephrased for more clarity
+  + Examples:
+    + G1: "Make capabilities clear" --> "Make clear /what/ the system can do"
+    + G2: "Set expectations of quality" --> "Make clear /how well/ the system can do what it can do"
+* Phase 3: User Study (Results)
+** Evolution of guidelines 1 and 2
+#+ATTR_LATEX: :width 8cm
+[[/home/khadd/.dotfiles/dot_doom_d/org/roam/20210328222526-hai_slides.org_20210329_145644_YqLBqJ.png]]
+* Phase 4: Expert Evaluation
++ Experts: peoples who have experience in UX/HCI who are familiar with discount usability methods
++ 11 experts are recruited: 6 UX designers, 3 UX researchers, 2 in research and product planning roles
++ Experts are asked to asked to review 9 revised guidelines and chose what they prefer
+ [[/home/khadd/.dotfiles/dot_doom_d/org/roam/20210328222526-hai_slides.org_20210329_142534_H5hhXl.png]]
+
+*
+
+* Discussion
+** There is are tradeof between generality and specialization
++ The guidelines might not be able to address all types of AI-infused system
+  + For example, voice-based AI, activity trackers
++ Design guidelines that can be easily evaluated from the interface are focused on.
+  + Ex: Broarder principles such as "build trust" is excluded
+
+* Some guidelines
+** G1: Make clear what the system can do :ATTACH:
+:PROPERTIES:
+:ID:       665a82cb-2d19-4744-9df1-d92b30a09ab6
+:END:
++ Help the user understand what the AI system is capable of doing
++ Category: Initially
++ Example: Activity Trackers
+  + All metrics that it tracts is displayed and explained how
+#+ATTR_LATEX: :width 5cm
+[[attachment:_20210329_152534screenshot.png]]
+* Some guidelines
+** G4: Show contextually relevant information.
++ Display information relavent to the user's current task and environment
++ Category: Durring interaction
++ Example: Web Search
+#+ATTR_LATEX: :width 10cm
+[[/home/khadd/.dotfiles/dot_doom_d/org/roam/20210328222526-hai_slides.org_20210329_153249_iblmLZ.png]]
+* Some guidelines
+** G10: Scope when in doubt.
++ Engage in disambiguation or gracefully degrade the AI system's services when uncertain about a user's goal
++ Category: When wrong
++ Example: Autocomplete
+  + Usually 3-4 suggestion is provided instead of directly completing
+#+ATTR_LATEX: :width 10cm
+    [[/home/khadd/.dotfiles/dot_doom_d/org/roam/20210328222526-hai_slides.org_20210329_153821_U8RpNI.png]]
+
+* Some guidelines
+** G13: Learn from the user behaviour. :ATTACH:
+:PROPERTIES:
+:ID:       9caa3e20-4c07-492c-926a-38e5445e587e
+:END:
++ Personalize the user's experience by learning from their actions over time.
++ Category: Overtime
++ Example: Music Recommenders, Video Recommenders
+#+ATTR_LATEX: :width 10cm
+    [[attachment:_20210329_154317screenshot.png]]
