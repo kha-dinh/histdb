@@ -2,28 +2,42 @@
 update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
 
 [LegacySession: saved at previous logout]
-count=0
+clientMachine1=localhost
+clientMachine2=localhost
+command1=zathura
+command2=emacs
+count=2
 
 [Session: saved at previous logout]
 clientId1=10140dbcd8e000161537623500001883710007
 clientId2=10140dbcd8e000161537623500001883710008
 clientId3=10140dbcd8e000161537623500001883710009
-clientId4=1014811110995000161681011600000043590007
-count=4
-discardCommand3[$e]=rm,$HOME/.config/session/yakuake_10140dbcd8e000161537623500001883710009_1616784700_658411
+clientId4=1014811110995000161744853500000013890007
+clientId5=1014811110995000161715164300000011820125
+clientId6=1014811110995000161728701100000013820074
+count=6
+discardCommand3[$e]=rm,$HOME/.config/session/yakuake_10140dbcd8e000161537623500001883710009_1617456847_38462
 program1=/usr/bin/msm_kde_notifier
 program2=/usr/bin/pamac-tray-plasma
 program3=/usr/bin/yakuake
 program4=pulseaudio
-restartCommand1=/usr/bin/msm_kde_notifier,-session,10140dbcd8e000161537623500001883710007_1616784700_658409
-restartCommand2=/usr/bin/pamac-tray-plasma,-session,10140dbcd8e000161537623500001883710008_1616784700_658388
-restartCommand3=/usr/bin/yakuake,-session,10140dbcd8e000161537623500001883710009_1616784700_658411
+program5=firefox
+program6=zotero
+restartCommand1=/usr/bin/msm_kde_notifier,-session,10140dbcd8e000161537623500001883710007_1617456847_38482
+restartCommand2=/usr/bin/pamac-tray-plasma,-session,10140dbcd8e000161537623500001883710008_1617456847_38455
+restartCommand3=/usr/bin/yakuake,-session,10140dbcd8e000161537623500001883710009_1617456847_38462
 restartCommand4=
+restartCommand5=/usr/lib/firefox/firefox,--sm-client-id,1014811110995000161715164300000011820125
+restartCommand6=/usr/lib/zotero/zotero,--sm-client-id,1014811110995000161728701100000013820074
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
 restartStyleHint4=0
+restartStyleHint5=0
+restartStyleHint6=0
 userId1=khadd
 userId2=khadd
 userId3=khadd
 userId4=khadd
+userId5=khadd
+userId6=khadd

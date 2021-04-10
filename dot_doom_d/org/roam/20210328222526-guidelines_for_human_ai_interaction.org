@@ -1,9 +1,9 @@
-#+title: Guidelines for Human-AI Tnteraction
+#+title: Guidelines for Human-AI Interaction
 #+date:
 
 * Paper: Guidelines for Human-AI interaction
 + Authors: Saleema Amershi et. al., Microsoft Research
-+ Published in: CHI 2018
++ Published in: CHI 2019
 ** Overview
 + 18 design guidelines for human-AI interaction is composed from over 150 design recommendations from over 20 years of learning in AI design
 + The guidelines are validated through multiple rounds user study

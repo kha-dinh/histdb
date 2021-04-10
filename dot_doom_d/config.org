@@ -100,8 +100,15 @@
   )
 #+end_src
 * Language Settings
+** Packages
+#+begin_src emacs-lisp :tangle packages.el
+#+end_src
 ** C/C++
 #+begin_src emacs-lisp :tangle yes
+(map! :leader
+      :prefix "f"
+      :desc "Find other file" "o" 'ff-find-other-file
+      )
 #+end_src
 ** Python 
 
@@ -165,6 +172,11 @@ same directory as the org-buffer and insert a link to this file."
   (call-process "import" nil nil nil filename)
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
+
+(add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
+(add-to-list 'image-file-name-extensions "pdf")
+(setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
+(setq org-image-actual-width 600)
 #+END_SRC
 
 ** Templates
@@ -191,6 +203,8 @@ same directory as the org-buffer and insert a link to this file."
      "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")")
    ))
 (setq +latex-viewers '(zathura pdf-tools okular))
+(setq-default TeX-engine 'xetex)
+(setq-default TeX-PDF-mode t)
 ;; (add-hook! LaTeX-mode
 ;;   (setq TeX-auto-save t
 ;;         TeX-parse-self t
@@ -312,4 +326,8 @@ Disable opening new workspace
 #+begin_src emacs-lisp :tangle yes
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
+#+end_src
+** Floobits
+#+begin_src emacs-lisp :tangle packages.el
+(package! floobits)
 #+end_src

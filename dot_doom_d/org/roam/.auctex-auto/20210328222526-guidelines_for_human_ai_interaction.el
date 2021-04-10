@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "20210328222526-guidelines_for_human_ai_tnteraction"
+ "20210328222526-guidelines_for_human_ai_interaction"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("beamer" "presentation")))

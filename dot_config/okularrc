@@ -7,13 +7,20 @@ DP-4 DP-0 Width 3840x2160=2548
 DP-4 DP-0 Window-Maximized 3840x2160=true
 DP-4 DP-0 XPosition 3840x2160=16
 DP-4 DP-0 YPosition 3840x2160=584
-State=AAAA/wAAAAD9AAAAAAAAAo8AAADOAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAA0gAAAHaAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-eDP-1 Height 1920x1080=321
-eDP-1 Width 1920x1080=655
-eDP-1 XPosition 1920x1080=1250
-eDP-1 YPosition 1920x1080=737
+eDP-1 Height 1920x1080=1060
+eDP-1 Width 1920x1080=1920
+eDP-1 Window-Maximized 1920x1080=true
+eDP-1 XPosition 1920x1080=1065
+eDP-1 YPosition 1920x1080=561
+
+[Notification Messages]
+presentationInfo=false
 
 [Recent Files]
 File1[$e]=$HOME/Zotero/storage/PXNT99Y2/Mittelstadt et al. - 2019 - Explaining Explanations in AI.pdf
+File2[$e]=$HOME/.dotfiles/dot_doom_d/org/roam/20210328222526-guidelines_for_human_ai_tnteraction.pdf
 Name1[$e]=Mittelstadt et al. - 2019 - Explaining Explanations in AI.pdf
+Name2[$e]=20210328222526-guidelines_for_human_ai_tnteraction.pdf

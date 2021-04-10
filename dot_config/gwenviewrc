@@ -1,2 +1,36 @@
 [$Version]
 update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
+
+[KPropertiesDialog]
+eDP-1 Height 1920x1080=458
+eDP-1 Width 1920x1080=392
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAAAOEAAAO8AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1 Height 1920x1080=1060
+eDP-1 Width 1920x1080=1920
+eDP-1 Window-Maximized 1920x1080=true
+eDP-1 XPosition 1920x1080=14
+eDP-1 YPosition 1920x1080=34
+
+[Recent Files]
+File1[$e]=$HOME/projects/pim-enclave-paper4/images/performance.png
+File2[$e]=$HOME/projects/pim-enclave-paper4/images/kmean-performance.png
+File3[$e]=$HOME/projects/pim-enclave-paper4/images/write-performance.png
+File4[$e]=$HOME/projects/pim-enclave-paper4/images/threat-model.eps
+File5[$e]=$HOME/projects/pim-enclave-paper4/images/threat-model-eps-converted-to.pdf
+File6[$e]=$HOME/projects/pim-enclave-paper4/images/test.eps
+File7[$e]=$HOME/projects/pim-enclave-paper4/images/seq-performance.eps
+File8[$e]=$HOME/projects/pim-enclave-paper4/images/seq-performance.png
+Name1[$e]=performance.png
+Name2[$e]=kmean-performance.png
+Name3[$e]=write-performance.png
+Name4[$e]=threat-model.eps
+Name5[$e]=threat-model-eps-converted-to.pdf
+Name6[$e]=test.eps
+Name7[$e]=seq-performance.eps
+Name8[$e]=seq-performance.png
+
+[SideBar]
+SideBarSplitterSizes=111,111
