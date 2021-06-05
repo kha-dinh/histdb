@@ -1,11 +1,11 @@
 [ExtractDialog]
 DP-4 DP-0 Height 3840x2160=1100
 DP-4 DP-0 Width 3840x2160=2376
-DirHistory[$e]=$HOME/Downloads/wilt/,$HOME/Downloads/
+DirHistory[$e]=$HOME/Downloads/,$HOME/Downloads/wilt/
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME
-Recent URLs[$e]=file:///tmp/,file:$HOME/Downloads/,file:$HOME/Downloads/wilt/
+Recent URLs[$e]=file:///tmp/,file:$HOME/Downloads/,file:$HOME/
 detailViewIconSize=16
 
 [KTextEditor Document]
@@ -116,26 +116,22 @@ DP-4 DP-0 XPosition 2560x1440=5234
 DP-4 DP-0 XPosition 3840x2160=16
 DP-4 DP-0 YPosition 2560x1440=45
 DP-4 DP-0 YPosition 3840x2160=761
-State=AAAA/wAAAAD9AAAAAAAABA0AAAJKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAA0gAAABwAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 StatusBar=Disabled
 ToolBarsMovable=Disabled
-splitterSizes=690,346
+eDP-1 Height 1920x1080=328
+eDP-1 Width 1920x1080=840
+eDP-1 XPosition 1920x1080=1065
+eDP-1 YPosition 1920x1080=34
+splitterSizes=559,280
 
 [Open-with settings]
 CompletionMode=1
 History=kate
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/Zotero-5.0.96_linux-x86_64.tar.bz2
-File2[$e]=$HOME/Downloads/AirQualityUCI.zip
-File3[$e]=$HOME/Downloads/final_general.dat.gz
-File4[$e]=$HOME/Downloads/wilt.zip
-File5[$e]=$HOME/Downloads/Hack-v3.003-ttf.zip
-Name1[$e]=Zotero-5.0.96_linux-x86_64.tar.bz2
-Name2[$e]=AirQualityUCI.zip
-Name3[$e]=final_general.dat.gz
-Name4[$e]=wilt.zip
-Name5[$e]=Hack-v3.003-ttf.zip
+File1[$e]=$HOME/Downloads/PIMP-Enclave.zip
+Name1[$e]=PIMP-Enclave.zip
 
 [Viewer]
 DP-4 DP-0 Height 2560x1440=1418

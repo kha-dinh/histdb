@@ -82,53 +82,17 @@ Mode Set By User=false
 Time=2021,3,17,3,52,2.851
 URL=file:///home/khadd/Downloads/car.data
 
-[file:///home/khadd/Downloads/machine.data]
+[file:///home/khadd/Downloads/upmemcloud_dalo2903]
 Bookmarks=
-Checksum=656ed8cd1f8f7ad3869102baeb7c6ea3f29a1313
+Checksum=d86ffd3a2a0eed74804054b9fa79fcecd74869c5
 Encoding=UTF-8
 Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
 Mode=Normal
 Mode Set By User=false
-Time=2021,3,10,11,35,6.083
-URL=file:///home/khadd/Downloads/machine.data
-
-[file:///home/khadd/Downloads/spambase (1).names]
-Bookmarks=
-Checksum=98338f40a16f320479c5c60c4b3a26f3cf3699cd
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,8,35,55.889
-URL=file:///home/khadd/Downloads/spambase (1).names
-
-[file:///home/khadd/Downloads/spambase.data]
-Bookmarks=
-Checksum=b6dd6cc2d2288938bb76d12dbe8e639c4ef22862
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,8,35,55.889
-URL=file:///home/khadd/Downloads/spambase.data
-
-[file:///home/khadd/Downloads/spambase.names]
-Bookmarks=
-Checksum=98338f40a16f320479c5c60c4b3a26f3cf3699cd
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,8,34,40.241
-URL=file:///home/khadd/Downloads/spambase.names
+Time=2021,4,10,3,37,7.547
+URL=file:///home/khadd/Downloads/upmemcloud_dalo2903
 
 [file:///home/khadd/Downloads/wilt/training.csv]
 Bookmarks=
@@ -153,42 +117,6 @@ Mode=Normal
 Mode Set By User=false
 Time=2021,3,17,3,52,2.851
 URL=file:///home/khadd/Downloads/winequality-white.csv
-
-[file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/2-spambase.data]
-Bookmarks=
-Checksum=b6dd6cc2d2288938bb76d12dbe8e639c4ef22862
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,11,37,55.192
-URL=file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/2-spambase.data
-
-[file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/3-machine.data]
-Bookmarks=
-Checksum=656ed8cd1f8f7ad3869102baeb7c6ea3f29a1313
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,11,37,55.192
-URL=file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/3-machine.data
-
-[file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/spambase.data]
-Bookmarks=
-Checksum=b6dd6cc2d2288938bb76d12dbe8e639c4ef22862
-Encoding=UTF-8
-Highlighting=None
-Highlighting Set By User=false
-Indentation Mode=normal
-Mode=Normal
-Mode Set By User=false
-Time=2021,3,10,11,35,6.083
-URL=file:///home/khadd/projects/sslab-smcsim/SMC/SW/HOST/app/pim_kmean_enclave/datasets/spambase.data
 
 [file:///tmp/ark-IUddpu/training.csv]
 Checksum=1d3023d110e891eed0427791a97194add434e4c5
