@@ -1,0 +1,242 @@
+% Created 2021-05-27 Thu 16:40
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\author{Dinh Duy Kha}
+\date{\today}
+\title{Compiler Final}
+\hypersetup{
+ pdfauthor={Dinh Duy Kha},
+ pdftitle={Compiler Final},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.0.50 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Parallel Architecture}
+\label{sec:org001a67c}
+\subsection{Shared memory (SMP)}
+\label{sec:org5de21ae}
+\begin{itemize}
+\item \textbf{Symetric multi-processors (SMP)}
+\item All CPUs use single address space
+\item Threads, OpenMP
+\item Communication through load/store (\texttt{implicit})
+\item Synchronization using locks and barriers
+\item Requires cache coherence
+\end{itemize}
+\subsubsection{Cache Coherency}
+\label{sec:orgbaf87a6}
+\begin{enumerate}
+\item Snooping
+\label{sec:org7081db9}
+\begin{itemize}
+\item Cache controller snoop on the bus
+\item Multiple read-only copies on CPUs
+\item Single modified copy on a CPU
+\begin{itemize}
+\item \emph{Invalidate} other copies when a shared cacheline is update
+\end{itemize}
+\item Use 3 states (MSI):
+\begin{itemize}
+\item Modified: writable
+\item Shared: read-only
+\item Invalid: no data
+\end{itemize}
+\end{itemize}
+\begin{enumerate}
+\item Write Invalidate
+\label{sec:org202dc76}
+\begin{itemize}
+\item Invalidate copies on update
+\item On cache miss:
+\begin{itemize}
+\item Write-through: up-to-date
+\item Write-back: Force of most recent copy to update memory
+\end{itemize}
+\end{itemize}
+\item Write Update
+\label{sec:orgcfdf139}
+\begin{itemize}
+\item Update copies on update
+\item On cache miss:
+\begin{itemize}
+\item Write-through: up-to-date
+\item Write-back: Force one of the sharer update memory
+\end{itemize}
+\end{itemize}
+\item MESI Protocol
+\label{sec:org991be4f}
+\begin{itemize}
+\item Add Exclusive: line exclusive to the CPU
+\item S -> M : invalidate traffic
+\item E -> M : no invalidate traffic
+\end{itemize}
+\end{enumerate}
+\item Directory
+\label{sec:org69c226c}
+\end{enumerate}
+\subsection{Distributed memory}
+\label{sec:orgeecbb42}
+\begin{itemize}
+\item Each CPU access partial data
+\item Remaining through communication
+\item NUMA, Cluster
+\item MPI
+\item Communication using message passing (\texttt{explicit})
+\item No cache coherence
+\end{itemize}
+\subsection{Multithreading architectures}
+\label{sec:org242fb13}
+\subsubsection{Superscalar}
+\label{sec:org441a71f}
+\subsubsection{Multithreading}
+\label{sec:org657c63e}
+\subsubsection{Simultaneous Multithreading (SMT)}
+\label{sec:org0678268}
+\section{Synchronization}
+\label{sec:org2778e7e}
+\subsection{Mutual exclusion}
+\label{sec:org1312fba}
+\subsection{Event synchronization}
+\label{sec:orgdf52891}
+\subsubsection{Point-to-point}
+\label{sec:org8009fbe}
+\subsubsection{Barrier}
+\label{sec:org9e027aa}
+\begin{enumerate}
+\item Centralized
+\label{sec:org2fe6fec}
+\item Combining tree
+\label{sec:orga7fd977}
+\end{enumerate}
+\subsection{Lock}
+\label{sec:org087376f}
+\subsubsection{Test \& test \& set}
+\label{sec:orgf0ec196}
+\subsubsection{LL-SC}
+\label{sec:org30e050a}
+\subsubsection{Ticket Lock}
+\label{sec:org8b9a952}
+\subsubsection{Array-based}
+\label{sec:orgec68756}
+\subsection{Lock-free algorithms}
+\label{sec:orgec7d686}
+\subsubsection{List}
+\label{sec:org631c48a}
+\subsubsection{Circular queue}
+\label{sec:orgbd2331d}
+\section{Dependence Analysis}
+\label{sec:org7b8e976}
+\subsection{Instruction scheduling / reordering}
+\label{sec:orgbd5b0e8}
+\subsection{Parallelization}
+\label{sec:org747114d}
+\section{Loop Transformations}
+\label{sec:org7db6080}
+\subsection{1D loop}
+\label{sec:org6d7170f}
+\subsection{2D loop}
+\label{sec:org3b3772c}
+\subsection{3D loop}
+\label{sec:org2d55dd5}
+\subsection{Loop Transformations}
+\label{sec:org3a7e081}
+\subsubsection{Permutation}
+\label{sec:org98bf787}
+\subsubsection{Reversal}
+\label{sec:org8f35eda}
+\subsubsection{Skew}
+\label{sec:org77a5548}
+\subsubsection{Tiling (Blocking)}
+\label{sec:orga4f0e5c}
+\subsubsection{Fusion}
+\label{sec:org2132637}
+\subsubsection{Distribution (fission)}
+\label{sec:orge8030e4}
+\subsubsection{Index set splitting ( loop peeling )}
+\label{sec:orgb9596bc}
+\subsubsection{Unrolling}
+\label{sec:orge1159a5}
+\subsection{Unimodular Transformation}
+\label{sec:org206fd85}
+\section{DNN Compilers}
+\label{sec:org0713e6a}
+\subsection{TVM}
+\label{sec:org7013c30}
+\begin{itemize}
+\item Ingest models from Pytorch, Tensorflow, ONNX, MxNet
+\item Target archtecture x86, ARM, GPUs, MIPS, RISC-V
+\item Optimized for target platform
+\end{itemize}
+\subsubsection{Operator Optimization}
+\label{sec:org2d57dc9}
+\begin{enumerate}
+\item Halide progamming model:
+\label{sec:orgb4d4ac1}
+\begin{itemize}
+\item Functional definition: What the function do
+\item Schedule definitions: How should the function do it
+\end{itemize}
+\item TVM Scheduling Primitive
+\label{sec:org67910cf}
+\begin{itemize}
+\item Primitives for optimizations
+\end{itemize}
+\end{enumerate}
+\subsubsection{Automated optimization search: AutoTVM}
+\label{sec:orgf3f4ec9}
+\begin{itemize}
+\item Use ML to learn the best code to be generated
+\end{itemize}
+\subsubsection{Graph-level Optimization: Use Relay IR}
+\label{sec:orgc708230}
+\begin{enumerate}
+\item Operator fusion
+\label{sec:org0020e2e}
+\begin{itemize}
+\item Fuse operators together to minimize
+\end{itemize}
+\end{enumerate}
+\subsection{XLA: Accelerated Linear Algebra compiler}
+\label{sec:org13b8316}
+\begin{itemize}
+\item Take tensorflow graphs, split out optimzied assembly
+\item TF Graph -> XLA Graph -> LLVM IR -> ASM code
+\end{itemize}
+\subsubsection{TF2XLA}
+\label{sec:org9571a6a}
+\begin{itemize}
+\item Old TF: Look for optimized kernel in runtime library
+\item XLA: Look for tf2xla kernel to plug into TF graph
+\end{itemize}
+\subsubsection{JIT}
+\label{sec:org101a67a}
+\begin{itemize}
+\item Compile TF clusters of nodes into XLA graph
+\item Execute the whole cluster
+\end{itemize}
+\subsubsection{Ahead-of-time compilation}
+\label{sec:orgb3cdb53}
+\begin{itemize}
+\item Use \textbf{Graph Compiler}
+\item Compile the entire XLA graph
+\end{itemize}
+\end{document}

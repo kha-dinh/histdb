@@ -181,6 +181,11 @@ same directory as the org-buffer and insert a link to this file."
 (add-to-list 'image-file-name-extensions "pdf")
 (setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
 (setq org-image-actual-width 600)
+(setq org-latex-pdf-process
+      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 #+END_SRC
 
 ** Templates
@@ -326,12 +331,8 @@ T - tag prefix
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
 #+end_src
 ** New frame behavior
-Disable opening new workspace
+# Disable opening new workspace
 #+begin_src emacs-lisp :tangle yes
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
-#+end_src
-** Floobits
-#+begin_src emacs-lisp :tangle packages.el
-(package! floobits)
 #+end_src

@@ -1,0 +1,11 @@
+
+#+title: Privado
+
+
+* Access pattern based attack
++ Predict label of input data by observing access pattern of a DNN
+** Steps
+1. Use its own input to collect memory access pattern & correspoinding output
+2. Train a logistic regression classifier using memory patterns & output
+3. Collect memory access trace during attack
+4. Use trained classifier to predict output

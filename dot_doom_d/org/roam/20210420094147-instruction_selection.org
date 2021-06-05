@@ -1,0 +1,24 @@
+#+title: Instruction Selection
+
+* Overview
++ A [[file:20210304170921-compilers.org][Compilers]] step that map [[file:20210305142947-intermediate_representations.org][Intermediate Representations]] into assemly code
++ Goal: to automate generation of instruction selection
++ Use pattern matching techniques
+
+* Simple Treewalk
++ Replace AST tree
+* Tiling AST tree:
++ Use replacement rules bottom to top
++ Match the lowest cost
+* Use Peephole Optimization
++ Move peephole over code and search for optimization of pattern
++ Modern peephole have 3 step:
+  - Expander:
+    + Turn IR code into Low-level IR(LLIR)
+    + Rewrite operation using template (tree walk)
+  - Simplifier:
+    + Optimize LLIR within the window
+  - Matcher
+    + Compare simplified LLIR against a library of patterns
+    + Pick low-cost pattern
+    + Must preserve LLIR effects
