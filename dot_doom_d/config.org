@@ -151,6 +151,9 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((gnuplot . t)))
+(add-to-list 'image-type-file-name-regexps '("\\.eps\\'" . _imagemagick))
+(add-to-list 'image-file-name-extensions "eps")
+(setq org-image-actual-width '(800))
 #+END_SRC
 
 ** Templates
