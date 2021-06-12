@@ -162,6 +162,11 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((gnuplot . t)))
+<<<<<<< HEAD
+(add-to-list 'image-type-file-name-regexps '("\\.eps\\'" . _imagemagick))
+(add-to-list 'image-file-name-extensions "eps")
+(setq org-image-actual-width '(800))
+=======
 
 (defun my-org-screenshot ()
   "Take a screenshot into a time stamped unique-named file in the
@@ -181,6 +186,15 @@ same directory as the org-buffer and insert a link to this file."
 (add-to-list 'image-file-name-extensions "pdf")
 (setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
 (setq org-image-actual-width 600)
+<<<<<<< HEAD
+(setq org-latex-pdf-process
+      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+=======
+>>>>>>> c1d3982b2d7d905a73312846ac0812103ad264c3
+>>>>>>> 85a05ab7aca10309350cbb50994f95b70a3c8a0d
 #+END_SRC
 
 ** Templates
@@ -326,12 +340,8 @@ T - tag prefix
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
 #+end_src
 ** New frame behavior
-Disable opening new workspace
+# Disable opening new workspace
 #+begin_src emacs-lisp :tangle yes
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
-#+end_src
-** Floobits
-#+begin_src emacs-lisp :tangle packages.el
-(package! floobits)
 #+end_src

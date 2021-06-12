@@ -1,0 +1,2 @@
+#+title: A Modern Primer on Processing in Memory
+#+FILETAGS: :paper:pim:

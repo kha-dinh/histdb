@@ -1,0 +1,78 @@
+% Created 2021-04-19 Mon 23:58
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\author{DINH DUY KHA - 2019712308}
+\date{\today}
+\title{A System for Oblivious Decentralized Identity Resolving}
+\hypersetup{
+ pdfauthor={DINH DUY KHA - 2019712308},
+ pdftitle={A System for Oblivious Decentralized Identity Resolving},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.0.50 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\section{Background}
+\label{sec:orgcb41276}
+\textbf{Decentralized ID.} \emph{Decentralized ID} (DID) is an emerging direction towards decentralized identity management systems. It allows user to store there identity on the internet without involement from any central authorities. The Decentralized ID Foundation \cite{dif} (DIF) proposes a three-step sheme for Decentralized Identity: verifiable credential issurance, DID generation, and identity authentication. In the said sheme, the requesting party ``resolve'' DID and get a public proof material called a \emph{DID document}. It contains information for establishing secure interaction with the subject (i.e. the public key). The \emph{resolve} process is typically done by a \emph{DID resolver} through a HTTP connection. A decentralized identifier is then resolved to a DID document in JSON format, which is stored in a distributed ledger. This document contains a public key, authorization information, a list of interactive services with the ID. With the DID document, a requester could validate the credential of the ID's owner.
+
+\section{Motivation}
+\label{sec:orgb2f463b}
+\textbf{DID resolver designs lack considerations for obliviousness.} Current DID resolver designs do not take into account the fact that the cloud provider could \emph{learn and remember} the spatial and temporal pattern of requests. As an example, when DID is used for authenticating physical entrance \cite{vaccine-passport}, with the time of request and the location of request gotten during authentication, the identity of the ID owner could be leaked.
+Moreover, due to the performance limitations of blockchain networks \cite{blockchain-record}, the DID documents are often cached in the DID resolvers infrastructure. This lead to the \emph{cache timing side-channel}, where an adversarial measure the response time before getting the document to infer if it has been accessed or not.
+
+\section{Challenges}
+\label{sec:org09fdfb0}
+\textbf{Preserving confidentiality of DID and the document}. Because of DID and document correlation, the universal resolver must perform the resolving process without knowing the requested DID and retrieved DID document.
+
+\textbf{Mitigate response time side-channel.} DID document caching scheme must have a uniform response time to mitigate response time side-channel.
+
+\section{Plan and schedule}
+\label{sec:org86a35dc}
+I plan to first perform a security analysis on the common DID Resolver infrastructure to come up with a set of security requirements. I will measure the response time of common DID infrastructures for a concrete envidence of the response time side-channel. THe estimated time is 1 week.
+Then, I will propose a DID resolver design that satisfy the security requirements. A prototype will be implemented based on the design. The estimated time for this task is 2-3 weeks.
+Finally, I will measure the performance of the prototype with the \emph{request-per-minute} metric, which shows how much request the resolver design could serve in a minute. Moreover, I will also measure the average response time as another performance metric. It will take approximately 1 week to finish.
+The final report will be written durring the whole process.
+
+
+
+
+\begin{latex}
+\begin{thebibliography}{9}
+
+
+\bibitem{blockchain-record}
+T.-H. Kim, G. Kumar, R. Saha, M. K. Rai, W. J. Buchanan, R. Thomas,
+and M. Alazab, “A privacy preserving distributed ledger framework for
+global human resource record management: The blockchain aspect,”
+IEEE Access, vol. 8, pp. 96 455–96 467, 2020.
+
+\bibitem{dif}
+DIF, "Dif",
+\texttt{https://identity.foundation}, 2021
+
+\bibitem{vaccine-passport}
+W. P. Rachel Lerman, "Vaccine passport apps are here. but the technical challenges are still coming."
+\texttt{https://www.washingtonpost.com/
+technology/2021/04/02/vaccine-passports-apps-faq/}, 2021, last accessed
+Apr 2 , 2021,.
+
+\end{thebibliography}
+\end{latex}
+\end{document}

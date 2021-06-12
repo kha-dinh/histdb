@@ -1,0 +1,6 @@
+
+* PIM-Enclave Design
+:PROPERTIES:
+:ID:       ebc7579d-57df-4c33-b4b6-b40ed2f0e07a
+:BRAIN_CHILDREN: 781d6c6d-7778-4de8-804f-7082e781b616
+:END:

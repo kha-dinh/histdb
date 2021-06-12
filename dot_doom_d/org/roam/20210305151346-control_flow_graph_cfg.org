@@ -104,5 +104,23 @@ def find_all_doms(G):
 *** Strongly Conencted Components (SCC)
 + Is a subgraph G_{SCC} = (N_{SCC}, E_{SCC})
 + For any node u,v from N_{ssc}, a path from u to v and v to u always exist
-
-
+** Alias Analysis & Point-to Analysis
++ *Must vs. May Information*
+  - *Must* information: information true on *all* paths through CFG
+  - *May* information: information true on *some* paths through CFG
++ *Flow Sensitive vs. Insensitive*
+  + *Flow-insensitive* information: information is true *everywhere* on a CFG
+  + *Flow-sensitive* information: information is true on a specific point (basic block) on a CFG
++ Two variable are *aliased* if they use the same storage location
+  - Causes in programming (=union= type, pointers, call-by-reference)
++ To know pointers point to which object
++ Context-sensitive vs. Insensitive:
+  + Sensitive: Different information on different call sites
+  + Insensitive: Merge all call site
+*** Flow-Sensitive Alias Analysis
++ DFA: =f(I) = (I - {(x,t)} | any variable t}) \cup {(x, new_p)}=
++ More expensive but more precise
+*** Flow-Insensitive Alias Analysis
++ Inclusion-based: use subset
++ Unification-ased: use equaliy
++ Less expensive, less precise

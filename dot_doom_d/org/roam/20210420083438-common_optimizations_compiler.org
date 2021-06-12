@@ -1,0 +1,86 @@
+#+title: Common Optimizations (Compiler)
+
+[[file:20210304170921-compilers.org][Compilers]]
++ Performing one optimization enable other optimizations
++ Typically performed until no further optimization could be done.
+* Constant Folding
++ Compute known value at compile time
++ In general: If there is a statement $x:=y op z$ and x,y are constants
+  - Then $x op y$ can be computed at compile time
++ /example/:
+  x = 2 + 2 ---> x = 4
+  if (2 < 0) can be removed
+* Algebraic Simplication
++ Delete redundant operations
+  - x = x + 0, x = x * 1, ...
++ Or simplify
+  - x = x * 0 ---> x = 0
+  - x = x ** 2 ---> y = y * y
+  - x = x * 8 ---> x = x << 3 (may faster than *)
+  - (x - y ) + (x - y) ---> 2 * x - 2 * y ( may overflow )
+* Copy Probagation
++ Replace copy with the value itself
+  /ex/: if $w = x$ appears in a block, then all uses of w can be replaced with x
++ For *Global copy propagation*: use SSA form, replace copied value
+* Constant Propagation
++ Replace simple assignment with constant
++ For *Global copy propagation*: use SSA form, replace copied value
++ Does not make the program smaller or faster, but enable:
+  + Constant folding
+  + Dead code elimination
+  + Algeabraic simplicfication
+* Value Numbering
++ Eliminate computation if already done before
+  - VN(n): Assign an ID to each expression (n)
+    + VN(x+y) = VN(j) iff x+y and j have same value for all paths
++ Algorithm:
+  - For each operation x = <operatior,y,z>
+    + Get VN for <operation,y,z> from hash lookup: Hash<operator,VN(y),VN(z)>
+    + If x already have a VN, replace x with reference to VN
+      /ex/:
+       a0(3) = x0(1) + y0(2)
+       b0(3) = x0(1) + y0(2) -> b0 = a0
+  - For simple assignment (x = y, x = const)
+    + Simply assign the same VN for const/copy propagation
+** Dominator Value Numbering
++ Use hash table from idom(x)
+** Global Value Numbering
++ Use [[file:20210311211156-data_flow_analysis.org][Data Flow Analysis]] to find congruent sets of variables
++ Two nodes are congruent of a value graph if:
+  - They are the same node
+  - Or same constant contents
+  - Or same operator and congruent operand
+* Redundancy Elimination
+** Unreachable Code Elimination
++ If $w := rhs$ appears in a basic block and
+  $w$ does not appear anywhere else
+  then $w := rhs$ is _dead_ and can be eliminated
+** Partial Redundancy Elimination
++ When a expression is evaluated along some path but not all paths
++ Eliminate:
+  - Discover partial redundancies
+  - Convert to full redundancies
+  - Remove
+** Common Subexpression Elimination
++ Assume Basic block in SA form
++ All assignments with the same =rhs= compute the same value.
+  /example/:
+  x = y + z
+  w = y + z -> w = x
++ *Dominance in CSE*: If b1 dom b2 then b2 can be fully redundant
++ *Global CSE*:
+  + Solve "available expression" using DFA, them preplace common expressions with temp value
+** Code Motion
+*** Loop invariant code motion:
++ *Loop invariant*:
+  + Where operands are all constants
+  + Operands are all defined outside of the loop
++ Expressions are always safe
++ Assignment are not safe
+  - Conditional execution or early exit
+  - Raise exception
+  - (v = expression) Can only be hoisted if:
+    + Assignment dominate all uses of v in the loop
+    + Assignment dominates all exit blocks of the loop ( No early exit )
+*** Unification
++ If expressions are always evaluated after some point, move them to the *latest common dominator*
