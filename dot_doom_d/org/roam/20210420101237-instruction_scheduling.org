@@ -1,5 +1,0 @@
-#+title: Instruction Scheduling
-
-* Overview
-+ Reorder operations to hide latencies
-+ Assumes a fixed set of latencies

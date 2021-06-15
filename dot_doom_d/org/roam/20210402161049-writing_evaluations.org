@@ -1,2 +1,0 @@
-#+title: Writing Evaluations
-#+tags: writing

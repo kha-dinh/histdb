@@ -1,7 +1,0 @@
-#+title: Model Stealing Attack
-
-
-
-* References
-+ [[file:20210527164506-cache_telepathy.org][Cache Telepathy]] steals /model architecture/ by getting the matrix sizes from side-channels, then infer the DNN architecure from that
-+ [[file:20210527173108-privado.org][Privado]] predict the label of the input using memory access pattern of the network
