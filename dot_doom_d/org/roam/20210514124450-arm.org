@@ -1,0 +1,45 @@
+#+title: ARMageddon: Cache Attacks on Mobile Devices
+
+* Info
++ Published: USENIX 2016
++ Authors: Moritz Lipp
+
+* Abstract
+- Cross-core chache attacks on /non-rooted android without privileges/: Prime+Probe, Flush+Reload, Evict+Reload, Flush+Flush
+- Can monitor cache activity in TrustZone from normal world
+
+* Challenges in attacking ARM devices:
++ LLC on ARM are not inclusive -> cannot do cross-core attack
++ Have multiple CPUs that do not share cache
++ Do not have a flush instruction
++ Use pseudo-random replacement policy to decide which cacheline to replace
++ Cycle-accurate timings require root access
+* Background
+** [[file:20210514133046-cpu_caches.org][CPU Caches]]
+** Cache attacks
+*** Evict+Time:
+1. Measure execution time of victim
+2. Evict a cache set
+3. Measure the execution time again
+*** Prime+Probe:
+1. Occupy cache sets
+2. Schedule victim program
+3. Deterime which cache sets are still occupied
+*** Flush+Reload:
+1. Map binary(shared object) into address space
+2. Flush cache line (code or data)
+3. Schedule victim program
+4. Check if cache line has been loaded
++ Allows attacker to determine which exact instructions are executed and which data is accessed
+* Design
+** Solving non-inclusive cache
++ Cache is non-inclusive, but shared memory is coherent across cores
+  - Remote cache access is done on shared memory instead of memory access
++ To perform cross-core attack, load data into cache to evict L1 and L2 cache
+** Cross-CPU attack
++ Due to coherence, CPU request remote core fetch instead of memory request, which are faster
+** Fast evict strategy
++ Find eviction strategyies using automated way in ([[file:20210515064726-rowhamer_js.org][Rowhamer.js]])
++ Eviction set computed based on physical addresses gotten from /proc/self/pagemap
+
+** Timing strategy

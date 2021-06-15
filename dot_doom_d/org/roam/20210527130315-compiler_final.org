@@ -1,0 +1,279 @@
+#+title: Compiler Final
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+* Parallel Architecture
+** Shared memory (SMP)
++ *Symetric multi-processors (SMP)*
++ All CPUs use single address space
++ Threads, OpenMP
++ Communication through load/store (=implicit=)
++ Synchronization using locks and barriers
++ Requires cache coherence
+*** Cache Coherency
+**** Snooping
++ Cache controller snoop on the bus
++ Multiple read-only copies on CPUs
++ Single modified copy on a CPU
+  - /Invalidate/ other copies when a shared cacheline is update
++ Use 3 states (MSI):
+  - Modified: writable
+  - Shared: read-only
+  - Invalid: no data
+***** Write Invalidate
++ Invalidate copies on update
++ On cache miss:
+  - Write-through: up-to-date
+  - Write-back: Force of most recent copy to update memory
+***** Write Update
++ Update copies on update
++ On cache miss:
+  - Write-through: up-to-date
+  - Write-back: Force one of the sharer update memory
+***** MESI Protocol
++ Add Exclusive: line exclusive to the CPU
++ S -> M : invalidate traffic
++ E -> M : no invalidate traffic
+**** Directory
+** Distributed memory
++ Each CPU access partial data
++ Remaining through communication
++ NUMA, Cluster
++ MPI
++ Communication using message passing (=explicit=)
++ No cache coherence
+** Multithreading architectures
+*** Superscalar
++ No threading
+*** Multithreading
++ Issue Instruction single thread every cycle
+*** Simultaneous Multithreading (SMT)
++ Issue instruction multiple threads every cycle
+* Synchronization
+** Atomic Primitive
+*** Test&set
++ Load lock value into register, set lock to 1
+  1. reg = lock
+  2. lock = 1
+  3. compare reg, 0
+*** Swap
+*** Fetch&Incr / Decr
+*** Compare&Swap
+** Mutual exclusion
+*** Lock
++ Allow at most 1 thread to hold at a time
++ Lock = 0: free, 1: busy
++ Need atomic primitive to work because of race condition
+**** spinlock
+- ~while (test_and_set(lock) == 0){//critical}~
+- Lots of invalidation traffic from setting lock
+**** Test&set with backoff
++ Backoff (delay) when test&set fail
+**** Test & test&set
++ Test lock first for 0, if success then t&s
++ ~do {while(lock==true) } while test_and_set(lock)~
++ Use cached value for lock -> less traffic
+**** Load-Locked and Store-Conditional (LL-SC)
++ Less traffic: only success SC invalidate
++ O(p) on unlock
+***** LL
++ Load variable into register and lock
+***** SC
++ Store var into memory if no other processor access the location
+**** Ticket Lock
++ Use two counter: =next_ticket= & =now_serving=
++ Lock
+  - =fetch&incr= on =next_ticket=
+    + my_ticket = fetch&incr(next_ticket)
+  - if =now_serving= == =my_ticket= then get the lock
++ Unlock
+  - Increment =now_serving=
++ Pros:
+  - FIFO order -> no starvation
+  - Low trafic
++ Cons
+  - O(P) when unlock
+    + now_serving update invalidate all processors
+**** Array-based
++ Every processor spin different location
++ Lock
+  - fetch&incr to get the next location
++ Unlock
+  - Write unlocked to the next location
++ Pro
+  - FIFO
+  - Unlock O(1): only invalidate the same processor
++ Cons
+  - Space
+** Event synchronization
++ Use for maintaining order of event in processes
+*** Point-to-point
++ Use a variable to wait
+*** HW point-to-point
++ Use a =full-empty bit= For every word in memory
++ Write only if full-empty is 0 and set to 1
++ Read only if full-empty is 1 and set to 0
+*** Barrier
++ Wait for all process to reach that point
+**** Centralized
++ Use shared counter for no. of process that reach the barrier
++ Poll until all has arrived
++ Sense reversal
+  - Wait for flag turn to 1 for one instance
+  - to 0 in the next
+**** Combining tree
++ Use multiple locks for barrier in a tree
++ Less contention
++ Not good on bus, good in distributed networks
+**** HW barriers
+** Lock-free algorithms
++ Use atomic instructions instead of lock
+*** Lock-free List
++ Use compare-and-swap: if a == b, swap a = c
++ Add F to queue:
+  1. Q = head.next
+  2. F.next = Q
+  3. CAS(head.next, Q, F)
++ Only execute if head.next = Q -> no need lock
+*** Circular queue
++ Single reader / writer
++ Enqueue(n)
+  - tail = (tail + 1)%size;
+  - buffer[tail] = n
+  - return tail
++ Dequeue(&n)
+  - *n = buffer[head]
+  - head = (head+1)%size;
+* Dependence Analysis
+** Dependence
+*** Control dependence
++ Control flow
++ S1 determine if S2 execute
+*** Data dependence
++ Data flow
++ If S1 and S2 access the same variable
++ And S1 before S2
+**** Types
+***** Flow dependence
+  - Read after write
+  - True dependence
+***** Anti-dependence
+  + Register rename remove dependence
+  + WAR
+***** Output dependence
+  - WAW
+  - Both is assign
+***** Input Dependence
++ RAR
++ No hazard
+**** Dependence in loop
+***** Inter-loop dependence
+*****  Loop-independet dependence
++ Dependence within same loop /iteration/
+***** Loop-carried dependence
++ Dependence across loop iterations
++ Ex:  a[2] = a[1], then a[3] = a[2]
+***** Distance vector
++ Distance from read to write, across loop
++ b[i,j] = b[i-1, j+1]
++ (1,2): b[1,2] = b[0,3]
++ (2,1): b[2,1] = b[1,2]
++ d = (2,1) - (1,2) = (1,-1)
+***** Direction Vector
++ + if distance vector is positive
++ - if negative
++ = if = 0
+**** Data dependence test
++ Test if 2 accesses reference the same location on different i
++ Test if solution exist
+***** GCD test
++ If GDC exist, integer solution may exist
+***** Fourier-Motzkin Elimination
++ Pick and eliminate variables until only one left
+**** Parallel loop
++ Loop is parallel if
+  - i is forward or i
+  - j = 0
+
+** Instruction scheduling / reordering
+*** Code motion / hoisting / sinking
++ Move instruction up / down the control flow
++ As far as possible if no dependence
+*** Tail merging / cross jumping
++ Move instructions to common successor
+** Parallelization
++ Parallel loop when no loop-carried dependence
+* Loop Transformations
+
+** Parallel Loops
++ If have less processors, combine
+** Loop Transformations
+*** Permutation
++ Swap distance vector
++ Only safe if no negative vector (1,-1) -> (-1,1)
++ Swap i, j order of the loop
++ So that the outer loop can be parallelized
++ (1,0) -> (0,1)
+*** Reversal
++ Iterate loop backward
++ Only safe if do not change sign
++ for(i=0;i<N;i++) -> for(i=N-1; i>=0;i--)
++ Enable other tranformantions
+*** Skew
++ (d1,d2) -> (d1,d1 \alpha + d2)
++ Always safe
+*** Tiling (Blocking)
++ Change loop iteration shape
++ For Better cacheline reuse
+**** Strip mining
++ Always safe
++ Add dimension
+*** Fusion
++ Convert inter-loop dependence to loop-carried dependence
+  - fuse loop together
++ Safe if dependence preserved
+*** Distribution (fission)
++ Loop-carried dependence -> inter-loop dependence
++ Safe if dependence is preserved
++ For parallelzation
+*** Index set splitting ( loop peeling )
++ Split index to multiple loops
++ May seperate special case
++ Always safe
+*** Unrolling
++ Always safe
++ Create additional copies of loop body
++ for(i=0;i<100;i++) -> for(i=0;i<100;i+=2)
++ A[i] = B[i] -> A[i]=B[i]
+                A[i+1] = B[i+1]
++ Reduce loop overhead
++ Increase code size, register pressure
+** Unimodular Transformation
++ Combine transformation using matrix multiplication
++ Safe if new vector are lexicographyically positive
+* DNN Compilers
+** TVM
++ Ingest models from Pytorch, Tensorflow, ONNX, MxNet
++ Target archtecture x86, ARM, GPUs, MIPS, RISC-V
++ Optimized for target platform
+*** Operator Optimization
+**** Halide progamming model:
+ - Functional definition: What the function do
+ - Schedule definitions: How should the function do it
+**** TVM Scheduling Primitive
++ Primitives for optimizations
+*** Automated optimization search: AutoTVM
++ Use ML to learn the best code to be generated
+*** Graph-level Optimization: Use Relay IR
+**** Operator fusion
++ Fuse operators together to minimize
+** XLA: Accelerated Linear Algebra compiler
++ Take tensorflow graphs, split out optimzied assembly
++ TF Graph -> XLA Graph -> LLVM IR -> ASM code
+*** TF2XLA
++ Old TF: Look for optimized kernel in runtime library
++ XLA: Look for tf2xla kernel to plug into TF graph
+*** JIT
++ Compile TF clusters of nodes into XLA graph
++ Execute the whole cluster
+*** Ahead-of-time compilation
++ Use *Graph Compiler*
++ Compile the entire XLA graph

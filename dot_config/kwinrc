@@ -24,7 +24,7 @@ NoiseStrength=11
 Active=true
 LatitudeAuto=37.2859
 LongitudeAuto=127.0099
-NightTemperature=2500
+NightTemperature=3300
 
 [Plugins]
 desktopchangeosdEnabled=false

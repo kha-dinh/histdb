@@ -6,6 +6,7 @@ eDP-1 Height 1920x1080=458
 eDP-1 Width 1920x1080=392
 
 [MainWindow]
+<<<<<<< HEAD
 DP-0 DP-4 Height 2160x3840=3766
 DP-0 DP-4 Height 3840x2160=2118
 DP-0 DP-4 Width 2160x3840=1156
@@ -31,14 +32,17 @@ DP-4 YPosition 2160x3840=979
 MenuBar=Disabled
 RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAADwAAAAgSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+=======
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAPYAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab
 ToolBarsMovable=Disabled
 eDP-1 Height 1920x1080=1060
 eDP-1 Width 1920x1080=1920
-eDP-1 Window-Maximized 1920x1080=true
-eDP-1 XPosition 1920x1080=14
-eDP-1 YPosition 1920x1080=34
+eDP-1 XPosition 1920x1080=0
+eDP-1 YPosition 1920x1080=20
 
 [Recent Files]
+<<<<<<< HEAD
 File1[$e]=$HOME/projects/pim-enclave-paper/images/bandwidth.eps
 File2[$e]=$HOME/projects/pim-enclave-paper/images/access-control-dram.pdf
 Name1[$e]=bandwidth.eps
@@ -46,3 +50,24 @@ Name2[$e]=access-control-dram.pdf
 
 [SideBar]
 SideBarSplitterSizes=242,911
+=======
+File1[$e]=$HOME/projects/pim-enclave-paper4/images/performance.png
+File2[$e]=$HOME/projects/pim-enclave-paper4/images/kmean-performance.png
+File3[$e]=$HOME/projects/pim-enclave-paper4/images/write-performance.png
+File4[$e]=$HOME/projects/pim-enclave-paper4/images/threat-model.eps
+File5[$e]=$HOME/projects/pim-enclave-paper4/images/threat-model-eps-converted-to.pdf
+File6[$e]=$HOME/projects/pim-enclave-paper4/images/test.eps
+File7[$e]=$HOME/projects/pim-enclave-paper4/images/seq-performance.eps
+File8[$e]=$HOME/Downloads/Image Pasted at 2021-4-13 16-52.png
+Name1[$e]=performance.png
+Name2[$e]=kmean-performance.png
+Name3[$e]=write-performance.png
+Name4[$e]=threat-model.eps
+Name5[$e]=threat-model-eps-converted-to.pdf
+Name6[$e]=test.eps
+Name7[$e]=seq-performance.eps
+Name8[$e]=Image Pasted at 2021-4-13 16-52.png
+
+[SideBar]
+SideBarSplitterSizes=242,1675
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab

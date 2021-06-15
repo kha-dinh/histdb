@@ -1,0 +1,35 @@
+#+title: Cache Telepathy
+* Overview
++ /Reduce search space/ of DNN architectures from cache side-channels
++ Use Prime+Probe & Flush+Reload
++ Attack OpenBLS and Intel MKL library
+* Background
+** DNN
+*** DNN Architecture ( hyper parameters )
++ No. of layers
++ Layer types
++ Connections between layes
++ Hyper-parameters of each layer
+  - No. of neurons, no, of filter, filter size,filter stride
++ Activation function (Relu, sigmoid)
+*** Weight
+*** Usage
++ Inference usually done on CPUs
+** Attacks against DNN
++ Most attack /need the DNN architecture/
+*** Model extraction attack
++ Estimate weight of the network
+*** Membership inference attack
++ Try to infer traning data set
+*** Hyper-parameter stealing attacks
++ Steal loss functions and reularization terms
+** Cache Side-channels
+*** Flush+Reload
++ Map the same code to the attacker process, then determine if the victim has access through timing
+*** Prime+Pribe
++ Build /conflit addresses/ which map to the same cache set as victim's line
++ Access conflist address for victim to evict the line, then measure the access latency
+* Attack procedure
+1. Use cache attack to obtain matrix parameters
+2. Infer DNN architecture from matrix parameters
+3. Prune search space for DNN architecture

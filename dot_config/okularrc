@@ -2,6 +2,7 @@
 FullScreen=false
 
 [MainWindow]
+<<<<<<< HEAD
 DP-0 DP-4 Height 2160x3840=447
 DP-0 DP-4 Height 3840x2160=2086
 DP-0 DP-4 Width 2160x3840=944
@@ -30,10 +31,47 @@ DP-4 XPosition 2160x3840=1193
 DP-4 YPosition 2160x3840=989
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAACCAAAAf4AAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+=======
+:0.0 Height 1920x1080=504
+:0.0 Width 1920x1080=840
+:0.0 XPosition 1920x1080=4
+:0.0 YPosition 1920x1080=24
+DP-1 Height 1920x1080=328
+DP-1 Height 2560x1080=1072
+DP-1 Height 2560x1440=504
+DP-1 Width 1920x1080=533
+DP-1 Width 2560x1080=2552
+DP-1 Width 2560x1440=1380
+DP-1 XPosition 1920x1080=1372
+DP-1 XPosition 2560x1080=4
+DP-1 XPosition 2560x1440=14
+DP-1 YPosition 1920x1080=737
+DP-1 YPosition 2560x1080=4
+DP-1 YPosition 2560x1440=24
+DP-1 eDP-1 Height 1920x1080=504
+DP-1 eDP-1 Width 1920x1080=840
+DP-1 eDP-1 XPosition 1920x1080=1065
+DP-1 eDP-1 YPosition 1920x1080=561
+DP-3 eDP-1 Height 1920x1080=1028
+DP-3 eDP-1 Width 1920x1080=1028
+DP-4 DP-0 Height 3840x2160=1401
+DP-4 DP-0 Width 3840x2160=2548
+DP-4 DP-0 Window-Maximized 3840x2160=true
+DP-4 DP-0 XPosition 3840x2160=16
+DP-4 DP-0 YPosition 3840x2160=584
+State=AAAA/wAAAAD9AAAAAAAAA0gAAAEqAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab
 ToolBarsMovable=Disabled
-eDP-1 Height 1920x1080=1060
-eDP-1 Width 1920x1080=1920
-eDP-1 Window-Maximized 1920x1080=true
+eDP-1 DP-1 Height 1920x1080=504
+eDP-1 DP-1 Width 1920x1080=840
+eDP-1 DP-1 XPosition 1920x1080=4
+eDP-1 DP-1 YPosition 1920x1080=24
+eDP-1 DP-3 Height 1920x1080=1032
+eDP-1 DP-3 Width 1920x1080=1028
+eDP-1 DP-3 XPosition 1920x1080=14
+eDP-1 DP-3 YPosition 1920x1080=34
+eDP-1 Height 1920x1080=504
+eDP-1 Width 1920x1080=840
 eDP-1 XPosition 1920x1080=1065
 eDP-1 YPosition 1920x1080=561
 
@@ -41,6 +79,7 @@ eDP-1 YPosition 1920x1080=561
 presentationInfo=false
 
 [Recent Files]
+<<<<<<< HEAD
 File1[$e]=$HOME/Zotero/storage/FN8KYA2L/Awad et al. - 2017 - ObfusMem A Low-Overhead Access Obfuscation for Tr.pdf
 File10[$e]=$HOME/Desktop/final-solution.pdf
 File2[$e]=$HOME/Zotero/storage/5EWIM3LT/Orosa et al_2019_Dataplant.pdf
@@ -61,3 +100,25 @@ Name6[$e]=Oh et al. - TrustOre Side-Channel Resistant Storage for SGX u.pdf
 Name7[$e]=upmem-bandwidth.pdf
 Name8[$e]=upmem-read-bandwidth.pdf
 Name9[$e]=Gómez-Luna et al. - 2021 - Benchmarking a New Paradigm An Experimental Analy.pdf
+=======
+File1[$e]=$HOME/Downloads/Slides/Lecture06-Consistency2.pdf
+File10[$e]=$HOME/Downloads/Slides/Lecture05-Consistency1.pdf
+File2[$e]=$HOME/Downloads/Slides/Lecture04-Election.pdf
+File3[$e]=$HOME/Downloads/Slides/Lecture08-DistributedCommit.pdf
+File4[$e]=$HOME/Downloads/Slides/Lecture10-Raft.pdf
+File5[$e]=$HOME/Downloads/Slides/Lecture09-Paxos.pdf
+File6[$e]=$HOME/Downloads/Slides/Lecture13-NFS.pdf
+File7[$e]=$HOME/Downloads/Slides/Lecture14-AFS.pdf
+File8[$e]=$HOME/Downloads/Slides/Lecture18-CHORD.pdf
+File9[$e]=$HOME/Downloads/Slides/Lecture19-CAN.pdf
+Name1[$e]=Lecture06-Consistency2.pdf
+Name10[$e]=Lecture05-Consistency1.pdf
+Name2[$e]=Lecture04-Election.pdf
+Name3[$e]=Lecture08-DistributedCommit.pdf
+Name4[$e]=Lecture10-Raft.pdf
+Name5[$e]=Lecture09-Paxos.pdf
+Name6[$e]=Lecture13-NFS.pdf
+Name7[$e]=Lecture14-AFS.pdf
+Name8[$e]=Lecture18-CHORD.pdf
+Name9[$e]=Lecture19-CAN.pdf
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab

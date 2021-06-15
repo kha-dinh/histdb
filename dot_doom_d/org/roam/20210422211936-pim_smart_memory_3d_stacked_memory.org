@@ -1,0 +1,8 @@
+#+title: PIM / Smart Memory / 3D-stacked memory
+#+FILETAGS: :pim:
++ [[file:20210422212039-invisimem.org][Invisimem]] saids the logic layer decode command packets from processor and route them to vault memory controller. Vault memory controller then communicate with DRAM using DDR commands.
++ Tesseract
+  -  Each vault is composed of a 16-bank DRAM partition and a dedicated memory controller.In order to perform computation inside memory, a single-issue in-order core is placed at the logic die of eachvault (32 cores per cube).
+  - Tesseract acts like an accelerator that is memory-mapped to part of a noncacheable memory region of the host processors.
++ [[file:20210423024913-a_modern_primer_on_processing_in_memory.org][A Modern Primer on Processing in Memory]]
+  -  The logic layer is typically the bot-tommost layer of the chip, and is connected to the sameTSVs as the memory layers.  The logic layer providesarea inside the DRAM chip where architects can imple-ment functionality that interacts with both the processorand the DRAM cells.

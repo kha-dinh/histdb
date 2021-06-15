@@ -43,6 +43,9 @@ maxLength=3840
 minLength=3840
 thickness=44
 
+[PlasmaViews][Panel 3][Horizontal1920]
+thickness=44
+
 [PlasmaViews][Panel 3][Horizontal2560]
 maxLength=2520
 minLength=2520
@@ -69,9 +72,14 @@ thickness=70
 thickness=70
 
 [ScreenConnectors]
+<<<<<<< HEAD
 0=DP-0
 1=:0.0
 2=DP-4
+=======
+0=eDP-1
+1=DP-3
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab
 
 [Updates]
 performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js

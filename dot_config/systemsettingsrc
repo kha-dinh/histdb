@@ -1,4 +1,12 @@
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[KPropertiesDialog]
+DP-1 Height 2560x1080=458
+DP-1 Width 2560x1080=410
+
 [MainWindow]
+<<<<<<< HEAD
 DP-0 DP-4 Window-Maximized 3840x2160=true
 DP-0 DP-4 XPosition 2160x3840=0
 DP-0 DP-4 XPosition 3840x2160=0
@@ -24,12 +32,36 @@ MenuBar=Disabled
 RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAAA/wAAAK8AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
+=======
+DP-1 Height 2560x1080=504
+DP-1 Width 2560x1080=1128
+DP-1 Window-Maximized 1920x1080=true
+DP-1 XPosition 1920x1080=0
+DP-1 XPosition 2560x1080=1417
+DP-1 YPosition 1920x1080=20
+DP-1 YPosition 2560x1080=34
+DP-1 eDP-1 Height 1920x1080=1080
+DP-1 eDP-1 Width 1920x1080=1920
+DP-1 eDP-1 Window-Maximized 1920x1080=true
+DP-1 eDP-1 XPosition 1920x1080=0
+DP-1 eDP-1 YPosition 1920x1080=0
+DP-3 eDP-1 Height 1920x1080=514
+DP-3 eDP-1 Width 1920x1080=840
+eDP-1 DP-1 Height 1920x1080=504
+>>>>>>> 981e41b91c5195a625820218f1b3b8a93c73e8ab
 eDP-1 DP-1 Height 2560x1080=1036
+eDP-1 DP-1 Width 1920x1080=840
 eDP-1 DP-1 Width 2560x1080=2560
 eDP-1 DP-1 XPosition 2560x1080=1920
 eDP-1 DP-1 YPosition 2560x1080=0
-eDP-1 Height 1920x1080=1060
-eDP-1 Width 1920x1080=1920
+eDP-1 DP-3 Height 1920x1080=504
+eDP-1 DP-3 Width 1920x1080=840
+eDP-1 Height 1920x1080=1032
+eDP-1 Width 1920x1080=1028
 eDP-1 Window-Maximized 1920x1080=true
-eDP-1 XPosition 1920x1080=14
-eDP-1 YPosition 1920x1080=561
+eDP-1 XPosition 1920x1080=10
+eDP-1 YPosition 1920x1080=30
+
+[Open-with settings]
+CompletionMode=1
+History=ibus

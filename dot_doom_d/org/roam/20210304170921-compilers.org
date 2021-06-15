@@ -43,9 +43,18 @@
 + Decide which values -> registers
 + Find optimal order of execution
 + Ensure conformance with system interfaces
+*** Instruction Selection
++ Maps [[file:20210305142947-intermediate_representations.org][Intermediate Representations]] into assembly code
+*** Instruction scheduling
++ [[file:20210420101237-instruction_scheduling.org][Instruction Scheduling]]
 ** Middle End
 + Mostly used for code optimization:
   - Analyze and transforms IR into more optimized forms
 *** Goal:
   - Reduce Execution time, space, power consumption
   - Preserve original meaning
+* Optimizations
++ Idea: to transform code into mode efficient form
++ [[file:20210420083438-common_optimizations_compiler.org][Common Optimizations (Compiler)]]
++  [[file:20210420094147-instruction_selection.org][Instruction Selection]]
+*
