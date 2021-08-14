@@ -6,21 +6,27 @@
 #+begin_src emacs-lisp :tangle yes
 (setq-default delete-by-moving-to-trash t                      ; Delete files to trash
               window-combination-resize t                      ; take new window space from all other windows (not just current)
+              tab-width 4                                                         ; Set width for tabs
+              uniquify-buffer-name-style 'forward      ; Uniquify buffer names
               x-stretch-cursor t)                              ; Stretch cursor to the glyph width
 
-(setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
+(setq undo-limit 40000000                         ; Raise undo-limit to 40Mb
+      undo-outer-limit 4000000                         ; Raise undo-limit to 4Mb
       evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
       auto-save-default t                         ; Nobody likes to loose work, I certainly don't
+      inhibit-compacting-font-caches t      ; When there are lots of glyphs, keep them in memory
       truncate-string-ellipsis "…")               ; Unicode ellispis are nicer than "...", and also save /precious/ space
 
 (display-time-mode 1)                             ; Enable time in the mode-line
+(delete-selection-mode 1)                             ; Replace selection when inserting text
+(global-subword-mode 1)                           ; Iterate through CamelCase words
 
 (if (equal "Battery status not available"
            (battery))
     (display-battery-mode 1)                        ; On laptops it's nice to know how much power you have
   (setq password-cache-expiry nil))               ; I can trust my desktops ... can't I? (no battery = desktop)
 
-(global-subword-mode 1)                           ; Iterate through CamelCase words
+
 #+end_src
 * Global variables
 #+begin_src emacs-lisp :tangle yes
@@ -67,7 +73,7 @@
 * Programming Configs
 ** Variables
 #+begin_src emacs-lisp :tangle yes
-(defvar my-completion-delay 0.5)
+(defvar my-completion-delay 0)
 #+end_src
 ** LSP
 #+begin_src emacs-lisp :tangle yes
@@ -83,6 +89,11 @@
   )
 #+end_src
 ** Code Completion
+*** Packages
+
+#+begin_src emacs-lisp :tangle packages.el
+(package! company-tabnine)
+#+end_src
 *** Company
 #+begin_src emacs-lisp :tangle yes
 (after! company
@@ -90,6 +101,8 @@
   (setq
    company-idle-delay my-completion-delay
    company-minimum-prefix-length 1)
+  (add-to-list 'company-backends #'company-tabnine)
+
   (map!
    :map company-active-map
    ("<tab>" 'company-complete-selection)
@@ -135,25 +148,129 @@
 #+BEGIN_SRC emacs-lisp :tangle yes
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/.doom.d/org/")
-(setq org-roam-directory "~/.doom.d/org/roam/")
-(setq deft-directory "~/.doom.d/org/")
+(setq org-directory "~/Dropbox/org/")
+(setq org-roam-directory "~/Dropbox/org/roam/")
+(setq deft-directory "~/Dropbox/org/")
 ;; (setq org-ref-completion-library 'org-ref-ivy-cite)
-(setq reftex-default-bibliography "~/.doom.d/org/bibliography/bibliography.bib")
-(setq bibtex-completion-bibliography '("~/.doom.d/org/bibliography/bibliography.bib")
-      bibtex-completion-library-path "~/.doom.d/org/bibliography/pdfs"
-      bibtex-completion-notes-path "~/.doom.d/org/bibliography/ivy-bibtex-notes"
-      )
+;; https://rgoswami.me/posts/org-note-workflow/
+;; (add-hook! org-roam-mode org-roam-bibtex-mode)
 (use-package! org-ref
+  :after org
   :config
-  (setq org-ref-default-bibliography '("~/.doom.d/org/bibliography/bibliography.bib")
-        org-ref-bibliography-notes "~/.doom.d/org/bibliography/notes.org"
-        org-ref-pdf-directory "~/.doom.d/org/bibliography/pdfs/"
-        org-ref-completion-library 'org-ref-ivy-cite
-        ))
+  (setq
+   org-ref-completion-library 'org-ref-ivy-cite
+   org-ref-get-pdf-filename-function 'org-ref-get-pdf-filename-helm-bibtex
+   org-ref-default-bibliography '("~/Dropbox/org/bibliography/bibliography.bib")
+   org-ref-bibliography-notes "~/Dropbox/org/bibliography/notes"
+   org-ref-notes-directory "~/Dropbox/org/bibliography/notes"
+   ;; org-ref-notes-function 'orb-edit-notes
+   org-ref-note-title-format
+   (concat
+    "* TODO %y - %t\n"
+    ":PROPERTIES:\n"
+    ":Custom_ID: %k\n"
+    ":NOTER_DOCUMENT: %F\n"
+    ":ROAM_KEY: %k\n"
+    ":AUTHOR: %9a\n"
+    ":JOURNAL: %j\n"
+    ":YEAR: %y\n"
+    ":VOLUME: %v\n"
+    ":PAGES: %p\n"
+    ":DOI: %D\n"
+    ":URL: %U\n"
+    ":END:\n\n"
+    )
+   )
+  )
+
 
 (setq deft-recursive t)
 (add-hook! org-mode +org-pretty-mode)
+
+(after! org-ref
+  (setq bibtex-completion-bibliography '("~/Dropbox/org/bibliography/bibliography.bib")
+        bibtex-completion-notes-path "~/Dropbox/org/bibliography/notes/"
+        bibtex-completion-pdf-field "file"
+        bibtex-completion-notes-template-multiple-files
+        (concat
+         "#+TITLE: ${title}\n"
+         "#+ROAM_KEY: ${=key=}\n"
+         "* TODO Notes\n"
+         ":PROPERTIES:\n"
+         ":Custom_ID: ${=key=}\n"
+         ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
+         ":AUTHOR: ${author-abbrev}\n"
+         ":JOURNAL: ${journaltitle}\n"
+         ":DATE: ${date}\n"
+         ":YEAR: ${year}\n"
+         ":DOI: ${doi}\n"
+         ":URL: ${url}\n"
+         ":END:\n\n"
+         )
+        )
+  )
+;; (use-package! org-roam-bibtex
+;;   :after (org-roam)
+;;   :hook (org-roam-mode . org-roam-bibtex-mode)
+;;   :config
+;;   (setq org-roam-bibtex-preformat-keywords
+;;         '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
+;;   (setq orb-templates
+;;         '(("r" "ref" plain (function org-roam-capture--get-point)
+;;            ""
+;;            :file-name "${slug}"
+;;            :head "#+TITLE: ${=key=}: ${title}\n#+ROAM_KEY: ${ref}\n#+ROAM_TAGS:
+
+;; - keywords :: ${keywords}
+
+;; \n* ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :URL: ${url}\n  :AUTHOR: ${author-abbrev}\n  :NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n  :NOTER_PAGE: \n  :END:\n\n"
+
+;;            :unnarrowed t))))
+(after! org-noter
+  (setq
+   ;; The WM can handle splits
+    org-noter-notes-window-location 'other-frame
+   ;; Please stop opening frames
+   org-noter-always-create-frame nil
+   ;; I want to see the whole file
+   org-noter-hide-other nil
+   org-noter-separate-notes-from-heading t
+   ;; Everything is relative to the main notes file
+   org-noter-notes-search-path (list "~/Dropbox/org/bibliography/notes/")
+   )
+  (map!
+   :map org-noter-doc-mode-map
+   :leader
+   :desc "Insert note"
+   "n i" #'org-noter-insert-note
+   :desc "Insert precise note"
+   "n p" #'org-noter-insert-precise-note
+   :desc "Go to previous note"
+   "n <" #'org-noter-sync-prev-note
+   :desc "Go to next note"
+   "n >" #'org-noter-sync-next-note
+   :desc "Create skeleton"
+   "n ." #'org-noter-create-skeleton
+   :desc "Kill session"
+   "n q" #'org-noter-kill-session
+   )
+
+  )
+(after! org-capture
+  ;; Firefox and Chrome
+  (add-to-list 'org-capture-templates
+               '("P" "Protocol" entry ; key, name, type
+                 (file+headline +org-capture-notes-file "Inbox") ; target
+                 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?"
+                 :prepend t ; properties
+                 :kill-buffer t))
+  (add-to-list 'org-capture-templates
+               '("L" "Protocol Link" entry
+                 (file+headline +org-capture-notes-file "Inbox")
+                 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n"
+                 :prepend t
+                 :kill-buffer t))
+  )
 (use-package! org-roam-server
   :config
   (setq org-roam-server-host "localhost"
@@ -162,11 +279,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((gnuplot . t)))
-<<<<<<< HEAD
-(add-to-list 'image-type-file-name-regexps '("\\.eps\\'" . _imagemagick))
-(add-to-list 'image-file-name-extensions "eps")
 (setq org-image-actual-width '(800))
-=======
 
 (defun my-org-screenshot ()
   "Take a screenshot into a time stamped unique-named file in the
@@ -182,19 +295,9 @@ same directory as the org-buffer and insert a link to this file."
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
 
-(add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
 (add-to-list 'image-file-name-extensions "pdf")
 (setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
 (setq org-image-actual-width 600)
-<<<<<<< HEAD
-(setq org-latex-pdf-process
-      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "bibtex %b"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-=======
->>>>>>> c1d3982b2d7d905a73312846ac0812103ad264c3
->>>>>>> 85a05ab7aca10309350cbb50994f95b70a3c8a0d
 #+END_SRC
 
 ** Templates
@@ -220,6 +323,7 @@ same directory as the org-buffer and insert a link to this file."
    '("--eval"
      "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")")
    ))
+(setq reftex-default-bibliography "~/Dropbox/org/bibliography/bibliography.bib")
 (setq +latex-viewers '(zathura pdf-tools okular))
 (setq-default TeX-engine 'xetex)
 (setq-default TeX-PDF-mode t)
@@ -344,4 +448,30 @@ T - tag prefix
 #+begin_src emacs-lisp :tangle yes
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
+#+end_src
+
+** Yank image into clipboard
+#+begin_src emacs-lisp :tangle yes
+(defun x11-yank-image-at-point-as-image ()
+  "Yank the image at point to the X11 clipboard as image/png."
+  (interactive)
+  (let ((image (get-text-property (point) 'display)))
+    (if (eq (car image) 'image)
+        (let ((data (plist-get (cdr image) ':data))
+              (file (plist-get (cdr image) ':file)))
+          (cond (data
+                 (with-temp-buffer
+                   (insert data)
+                   (call-shell-region
+                    (point-min) (point-max)
+                    "xclip -i -selection clipboard -t image/png")))
+                (file
+                 (if (file-exists-p file)
+                     (start-process
+                      "xclip-proc" nil "xclip"
+                      "-i" "-selection" "clipboard" "-t" "image/png"
+                      "-quiet" (file-truename file))))
+                (t
+                 (message "The image seems to be malformed."))))
+      (message "Point is not at an image."))))
 #+end_src

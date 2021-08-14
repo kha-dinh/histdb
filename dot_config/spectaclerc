@@ -2,7 +2,8 @@
 update_info=spectacle_newConfig.upd:spectacle-new-config
 
 [GuiConfig]
-window-position=30,20
+captureMode=2
+window-position=24,1041
 
 [KFileDialog Settings]
 detailViewIconSize=16
