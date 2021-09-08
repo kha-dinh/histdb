@@ -1,6 +1,9 @@
 - defaults:
     link:
       relink: true
+      create: true
+      force: true
+      glob: true
 
 - clean: ["~`"]
 
@@ -11,25 +14,16 @@
       recursive: true
 - link:
     ~/.config:
-      glob: true
-      create: true
-      force: true
       path: dot_config/*
     ~/.doom.d:
-      glob: true
-      create: true
-      force: true
       path: dot_doom_d/*
+    ~/.doom.d:
+      if: '[ $PLATFORM = termux ]'
+      path: dot_doom_d_termux/*
     ~/.histdb/zsh-history.db:
-      create: true
-      path: dot_histdb/zsh-history.db
-    ~/.zprezto: dot_prezto
-    ~/.zlogin: dot_prezto/runcoms/zlogin
-    ~/.zlogout: dot_prezto/runcoms/zlogout
-    ~/.zpreztorc: dot_prezto/runcoms/zpreztorc
-    ~/.zprofile: dot_prezto/runcoms/zprofile
-    ~/.zshenv: dot_prezto/runcoms/zshenv
-    ~/.zshrc: dot_prezto/runcoms/zshrc
+      dot_histdb/zsh-history.db
+    ~/:
+      path: dot_prezto/runcoms/*
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
