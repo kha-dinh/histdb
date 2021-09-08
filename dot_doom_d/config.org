@@ -3,6 +3,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 #+end_src
 * Better defaults
+This is stolen from...
 #+begin_src emacs-lisp :tangle yes
 (setq-default delete-by-moving-to-trash t                      ; Delete files to trash
               window-combination-resize t                      ; take new window space from all other windows (not just current)
@@ -424,6 +425,10 @@ T - tag prefix
  )
 #+end_src
 * Misc
+** Packages
+#+begin_src emacs-lisp :tangle packages.el
+(package! evil-tutor)
+#+end_src
 ** Log files revert
 #+begin_src emacs-lisp :tangle yes
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
@@ -443,6 +448,7 @@ T - tag prefix
 
 (add-hook 'auto-revert-tail-mode-hook 'etc-log-tail-handler)
 #+end_src
+
 ** New frame behavior
 # Disable opening new workspace
 #+begin_src emacs-lisp :tangle yes

@@ -22,8 +22,13 @@
       path: dot_doom_d_termux/*
     ~/.histdb/zsh-history.db:
       dot_histdb/zsh-history.db
-    ~/:
-      path: dot_prezto/runcoms/*
-
+    ~/.zprezto: dot_prezto
+    ~/.zlogin: dot_prezto/runcoms/zlogin
+    ~/.zlogout: dot_prezto/runcoms/zlogout
+    ~/.zpreztorc: dot_prezto/runcoms/zpreztorc
+    ~/.zprofile: dot_prezto/runcoms/zprofile
+    ~/.zshenv: dot_prezto/runcoms/zshenv
+    ~/.zshrc: dot_prezto/runcoms/zshrc
+    ~/.p10k.zsh: dot_prezto/runcoms/p10k.zsh
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

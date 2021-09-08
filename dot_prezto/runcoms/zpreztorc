@@ -31,27 +31,27 @@ zstyle ':prezto:load' zmodule 'zprof'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 
-
- zstyle ':prezto:load' pmodule \
- 	'environment' \
- 	'terminal' \
- 	'archive' \
- 	'contrib-prompt' \
- 	'directory' \
- 	'docker' \
- 	'editor' \
- 	'emacs' \
- 	'git' \
- 	'history' \
- 	'utility' \
- 	'spectrum' \
- 	'autosuggestions' \
- 	'completion' \
- 	'fasd' \
- 	'syntax-highlighting' \
- 	'history-substring-search' \
- 	'zsh-histdb' \
- 	'prompt' 
+zstyle ':prezto:load' pmodule \
+    'pacman' \
+    'environment' \
+    'terminal' \
+    'archive' \
+    'contrib-prompt' \
+    'directory' \
+    'docker' \
+    'editor' \
+    'emacs' \
+    'git' \
+    'history' \
+    'utility' \
+    'spectrum' \
+    'autosuggestions' \
+    'completion' \
+    'fasd' \
+    'syntax-highlighting' \
+    'history-substring-search' \
+    'zsh-histdb' \
+    'prompt'
 
 # Set the query found color.
 zstyle ':prezto:module:autosuggestions:color' found 'cyan'
@@ -62,7 +62,7 @@ zstyle ':prezto:module:autosuggestions:color' found 'cyan'
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-    #   '0.0.0.0' '127.0.0.1'
+#   '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -82,7 +82,7 @@ zstyle ':prezto:module:editor' ps-context 'yes'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
- zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -177,12 +177,12 @@ zstyle ':prezto:module:prompt' show-return-val 'no'
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
 zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'line' \
-  'cursor' \
-  'root'
+    'main' \
+    'brackets' \
+    'pattern' \
+    'line' \
+    'cursor' \
+    'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
@@ -192,7 +192,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 #
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
-  'rm*-rf*' 'fg=white,bold,bg=red'
+    'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
