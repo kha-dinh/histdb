@@ -87,7 +87,7 @@ schemes:
       cyan:    '0x3FDCEE'
       white:   '0xBEBEC1'
 
-colors: *thelovelace
+colors: *tokyo-night-storm
 # Font configuration
 font:
   # Normal (roman) font face
