@@ -30,5 +30,7 @@
     ~/.zshenv: dot_prezto/runcoms/zshenv
     ~/.zshrc: dot_prezto/runcoms/zshrc
     ~/.p10k.zsh: dot_prezto/runcoms/p10k.zsh
+    ~/.vimrc: dot_prezto/runcoms/vimrc
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim: nvim/packer.nvim
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -46,3 +46,6 @@
 [submodule "dot_prezto/modules/zsh-histdb"]
 	path = dot_prezto/modules/zsh-histdb
 	url = https://github.com/larkery/zsh-histdb
+[submodule "nvim/packer.nvim"]
+	path = nvim/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
